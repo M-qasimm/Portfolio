@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Muhammad Qasim | Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Poppins', sans-serif; background: #0f0f0f; color: #f4f4f4; line-height: 1.6; }
+    header { background: linear-gradient(135deg, #1f1f1f, #0d6efd); text-align: center; padding: 3rem 1rem; }
+    header h1 { font-size: 3rem; font-weight: 700; animation: fadeInDown 1s ease; }
+    header p { font-size: 1.2rem; margin-top: 0.5rem; color: #ddd; animation: fadeInUp 1.5s ease; }
+    nav { background: #1a1a1a; padding: 1rem; text-align: center; position: sticky; top: 0; z-index: 100; }
+    nav a { margin: 0 20px; text-decoration: none; color: #f4f4f4; font-weight: 500; transition: color 0.3s ease; }
+    nav a:hover { color: #0d6efd; }
+    section { padding: 4rem 1rem; max-width: 1100px; margin: auto; opacity: 0; transform: translateY(30px); transition: all 0.8s ease; }
+    section.visible { opacity: 1; transform: translateY(0); }
+    h2 { color: #0d6efd; margin-bottom: 2rem; font-size: 2rem; border-left: 5px solid #0d6efd; padding-left: 10px; }
+    p { margin-bottom: 1rem; color: #ccc; }
+    .projects { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
+    .card { background: #1c1c1c; padding: 2rem; border-radius: 12px; transition: transform 0.3s, box-shadow 0.3s; animation: fadeInUp 1s ease; }
+    .card:hover { transform: translateY(-8px); box-shadow: 0 8px 20px rgba(0,0,0,0.5); }
+    .card h3 { margin-bottom: 1rem; color: #fff; }
+    .card p { color: #aaa; margin-bottom: 1rem; }
+    .card a { display: inline-block; color: #0d6efd; text-decoration: none; font-weight: 600; }
+    .card a:hover { text-decoration: underline; }
+    footer { text-align: center; padding: 2rem; background: #1a1a1a; margin-top: 2rem; font-size: 0.9rem; color: #aaa; }
+    footer a { color: #0d6efd; text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+    /* Animations */
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    html { scroll-behavior: smooth; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Muhammad Qasim</h1>
+    <p>Software Engineer | ML Intern @ Elevvo Pathway</p>
+  </header>
+
+  <nav>
+    <a href="#about">About</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <section id="about">
+    <h2>About Me</h2>
+    <p>
+      I’m Muhammad Qasim, a passionate software engineer and aspiring data scientist.  
+      Currently completing my <b>Elevvo Pathway Machine Learning Internship</b>, where I work on projects like regression, clustering, classification, recommendation systems, forecasting, and deep learning.  
+      I love solving real-world problems with clean, efficient, and impactful code.
+    </p>
+  </section>
+
+  <section id="projects">
+    <h2>Internship Projects</h2>
+    <div class="projects">
+      <div class="card">
+        <h3>Task 1: Student Score Prediction</h3>
+        <p>Linear Regression model to predict exam scores based on study hours.</p>
+        <a href="https://github.com/mqasimabdullah12/elevvo-pathway-ml-internship/tree/main/Task1_StudentScorePrediction" target="_blank">🔗 View Code</a>
+      </div>
+      <div class="card">
+        <h3>Task 2: Customer Segmentation</h3>
+        <p>K-Means clustering to group mall customers by income and spending behavior.</p>
+        <a href="https://github.com/mqasimabdullah12/elevvo-pathway-ml-internship/tree/main/Task2_CustomerSegmentation" target="_blank">🔗 View Code</a>
+      </div>
+      <!-- Add more tasks as you finish -->
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>
+      📧 Email: <a href="mailto:mqasimabdullah12@gmail.com">mqasimabdullah12@gmail.com</a><br>
+      💼 LinkedIn: <a href="https://linkedin.com/in/YOUR-LINKEDIN" target="_blank">View Profile</a><br>
+      🖥 GitHub: <a href="https://github.com/mqasimabdullah12" target="_blank">View GitHub</a>
+    </p>
+  </section>
+
+  <footer>
+    <p>© 2025 Muhammad Qasim | Built with ❤️ using GitHub Pages | <a href="#top">Back to top</a></p>
+  </footer>
+
+  <script>
+    // Reveal sections on scroll
+    const sections = document.querySelectorAll("section");
+    const reveal = () => {
+      const triggerBottom = window.innerHeight * 0.85;
+      sections.forEach(sec => {
+        const boxTop = sec.getBoundingClientRect().top;
+        if (boxTop < triggerBottom) sec.classList.add("visible");
+      });
+    };
+    window.addEventListener("scroll", reveal);
+    reveal();
+  </script>
+</body>
+</html>
